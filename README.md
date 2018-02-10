@@ -13,10 +13,9 @@ MVP Description and Essential Features:
   - Title 
   - Description
   - Podcastor (one who podcasts)
-- Login (associating saved data w an account)
-- Profile page
+  - See all previous reviews for this specific podcast
+- Login (associating saved data with an account)
 - Add a review: rate and comment
-- Search existing reviews
 
 Functionality: N/A
 
