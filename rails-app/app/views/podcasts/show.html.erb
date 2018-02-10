@@ -1,0 +1,7 @@
+<h2><%= @podcast.title %></h2>
+<h3><%= @podcast.podcastor %></h3>
+<p><%= @podcast.description %></p>
+
+<%= link_to "Back", root_path %>
+<%= link_to "Edit", edit_podcast_path(@podcast) %>
+<%= link_to "Delete", podcast_path(@podcast), method: :delete, data: { confirm: "Are you sure?"} %>
