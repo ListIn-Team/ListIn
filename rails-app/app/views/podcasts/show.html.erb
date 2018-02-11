@@ -3,5 +3,10 @@
 <p><%= @podcast.description %></p>
 
 <%= link_to "Back", root_path %>
-<%= link_to "Edit", edit_podcast_path(@podcast) %>
-<%= link_to "Delete", podcast_path(@podcast), method: :delete, data: { confirm: "Are you sure?"} %>
+
+<% if user_signed_in? %>
+  <% if @podcast.user_id == current_user.id %>
+    <%= link_to "Edit", edit_podcast_path(@podcast) %>
+    <%= link_to "Delete", podcast_path(@podcast), method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end %>
+<% end %>
