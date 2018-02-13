@@ -21,12 +21,18 @@ Podcast listeners, podcast creators, individuals new to podcasts
 - Add a review: comment
 
 ## Functionality 
-- Sign up / Log In / Sign Out (![homepage before login](/ReadMe-Screenshots/homepage.png) 
+ (![](/ReadMe-Screenshots/homepage.png) 
+ (![](/ReadMe-Screenshots/login.png) 
+ (![](/ReadMe-Screenshots/homepage-logged_in.png) 
+- Sign up / Log In / Sign Out
 	- Navigate to the left side of the header to Sign Up (if it's your first time visiting) or Log In (if it's not). When you are logged in, the option to log out appears. 
+ (![](/ReadMe-Screenshots/View-Podcast.png) 
 - View Podcast and Reviews
 	- The homepage displays a list of featured podcasts. Click on one to read more about it and its creators. From this page you can also read reviews left by other users. 
+ (![](/ReadMe-Screenshots/Add-New-Podcast.png) 
 - Add a Podcast
 	- Navigate to the right-hand corner to add a new podcast! This is not to add a review; but to add a podcast for anyone (including yourself) to review. Note that you can only add a podcast when signed in. When you are signed into the account that you added a certain podcast from, you can edit or delete that podcast. 
+ (![](/ReadMe-Screenshots/Add-Review.png) 
 - Add a Review
 	- Find the podcast that you want to review, and click 'Add Review'. Again, you must be signed in to do this. When you are signed in to the account that you added a review from, you can edit or delete that review. 
 	
