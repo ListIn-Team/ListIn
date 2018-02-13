@@ -1,3 +1,5 @@
 <% @podcasts.each do |podcast| %>
+  <div class="podcastList">
   <h2><%= link_to podcast.title, podcast_path(podcast)%></h2>
+  <div>
 <% end %>
