@@ -23,7 +23,7 @@ Podcast listeners, podcast creators, individuals new to podcasts
 ## Functionality 
 - Sign up / Log In / Sign Out
 	- Navigate to the left side of the header to Sign Up (if it's your first time visiting) or Log In (if it's not). When you are logged in, the option to log out appears. 
- (![]/ReadMe-Screenshots/homepage.png) 
+ ![](/ReadMe-Screenshots/homepage.png) 
  (![]/ReadMe-Screenshots/login.png) 
  (![]/ReadMe-Screenshots/homepage-logged_in.png) 
 - View Podcast and Reviews
