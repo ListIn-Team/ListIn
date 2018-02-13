@@ -19,7 +19,7 @@ MVP Description and Essential Features:
 
 Functionality: N/A
 
-Installation steps: on an internet browser, navigate to this address: URL
+Installation steps: Clone repository onto personal computer. On the terminal, navigate to repository folder and into the rails-app folder. Once again on the terminal, run the command "bundle install" and then "rails s". Go to a web browser and go to: http://localhost:3000.
 
 Issues: We tried adding a feature that would display the ratings of the podcasts in the representation of five stars. We found the plug-in that the tutorial used that would allow for this functionality (https://wbotelhos.com/raty/). However, we ran into jQuery bugs when we tried to apply the rating system to the website. So unfortunately, this functionality is not used in this version of the website. 
 
