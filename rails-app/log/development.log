@@ -3254,6 +3254,7 @@ Checked in these paths:
   
 app/assets/javascripts/application.js:16
 app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__761250855502830841_70247409937420'
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2018-02-12 21:06:12 -0800
   [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by PodcastsController#index as HTML
@@ -5780,5 +5781,16 @@ Processing by PodcastsController#show as HTML
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   Rendered podcasts/show.html.erb within layouts/application (4.4ms)
 Completed 200 OK in 101ms (Views: 94.7ms | ActiveRecord: 0.7ms)
+=======
+Started GET "/podcasts/5" for 127.0.0.1 at 2018-02-10 17:50:08 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 5]]
+  Rendered collection of reviews/_review.html.erb [4 times] (1.2ms)
+  Rendered podcasts/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 55ms (Views: 51.6ms | ActiveRecord: 0.4ms)
+>>>>>>> upstream/master
 
 

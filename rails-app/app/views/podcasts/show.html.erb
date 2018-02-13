@@ -1,18 +1,20 @@
-<h2><%= @podcast.title %></h2>
+<div class="podcast-display">
+<h2><%= @podcast.title %> </h2>
 <h3><%= @podcast.podcastor %></h3>
 <p><%= @podcast.description %></p>
-
-
-<div class = "row">
-  <div class= "col-md-4">
-    <p> Listener Reviews: </p>
-    <%= render @podcast.reviews %>
-
-    <div>
-        <%= link_to "Add Review", new_podcast_review_path(@podcast) %>
-    </div>
-  </div>
 </div>
+
+<div class="add-review">
+<%= link_to "Add Review", new_podcast_review_path(@podcast) %>
+</div>
+
+    <div class="reviews">
+      <div class="reviews-tag"
+        <p> Listener Reviews: </p>
+      </div>
+    <%= render @podcast.reviews %>
+    </div>
+
 
 <%= link_to "Back", root_path %>
 

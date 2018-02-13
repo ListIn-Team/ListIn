@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-  text-align: center
+.reviews, .podcast-display, .podcast-list, .add-review {
+  text-align: center;
+  padding: 2px 2px 2px 2px;
+}
+
+.reviews-tag {
+  font-weight: bold;
+}
+
+.podcast-display {
+  border: 1px solid black;
+  outline-style: solid;
+  padding: -5px 5px -5px 5px;
+}
+
+.add-review {
+  font-size: 150%
 }
