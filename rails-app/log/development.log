@@ -5794,3 +5794,357 @@ Completed 200 OK in 55ms (Views: 51.6ms | ActiveRecord: 0.4ms)
 >>>>>>> upstream/master
 
 
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:16:17 -0800
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 1067ms (Views: 1034.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 23:16:56 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (280.9ms)
+Completed 200 OK in 369ms (Views: 349.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-12 23:16:57 -0800
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 104ms (Views: 98.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-02-12 23:17:00 -0800
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CMedv4WpOkOOx4OaNAf/80LBURdxRCs02trmtqCfi5a9UUqhLOdrSj3G9poFpz4FiCVE0f4XFscYY1k5fDymeA==", "user"=>{"email"=>"egoodwin@hmc.edu"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["reset_password_token", "60a9e94d1bef24f67b0fd643c97b93f7a1451a7a11c5ff8920458e74ef22b0ba"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = ?, "reset_password_sent_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_password_token", "60a9e94d1bef24f67b0fd643c97b93f7a1451a7a11c5ff8920458e74ef22b0ba"], ["reset_password_sent_at", "2018-02-13 07:17:00.542914"], ["updated_at", "2018-02-13 07:17:00.543816"], ["id", 3]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (9.3ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 52.4ms
+Completed 401 Unauthorized in 1006ms (ActiveRecord: 4.1ms)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p>Someone has requested a link to change your password. You can do this through the link below.</p>
+    4: 
+    5: <p><%= link_to 'Change my password', edit_password_url(@resource, reset_password_token: @token) %></p>
+    6: 
+    7: <p>If you didn't request this, please ignore this email.</p>
+    8: <p>Your password won't change until you access the link above and create a new one.</p>
+  
+app/views/devise/mailer/reset_password_instructions.html.erb:5:in `_app_views_devise_mailer_reset_password_instructions_html_erb__2442554114501099185_70212424781740'
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:18:16 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.5ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 82ms (Views: 73.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 23:18:18 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 77ms (Views: 75.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:18:20 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 72ms (Views: 66.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 23:18:21 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 86ms (Views: 84.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:18:22 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 72ms (Views: 67.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 23:18:22 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 88ms (Views: 86.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-12 23:18:24 -0800
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 85ms (Views: 81.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-02-12 23:18:26 -0800
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BNEG5EL77JGDXXE7sWzpcFy08quj5ORYSKxqS8n50RqxR9H667W9mDBcBDuAzCiGllDnbSy32auKFdXEFVr89A==", "user"=>{"email"=>"egoodwin@hmc.edu"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["reset_password_token", "701bf8db1acf1c5ad3ef5d01a049ebc52653ef4dcbb2a1ff9d4409f363e2afe1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = ?, "reset_password_sent_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_password_token", "701bf8db1acf1c5ad3ef5d01a049ebc52653ef4dcbb2a1ff9d4409f363e2afe1"], ["reset_password_sent_at", "2018-02-13 07:18:26.618210"], ["updated_at", "2018-02-13 07:18:26.619117"], ["id", 3]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (3.6ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 39.9ms
+Completed 401 Unauthorized in 51ms (ActiveRecord: 4.1ms)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p>Someone has requested a link to change your password. You can do this through the link below.</p>
+    4: 
+    5: <p><%= link_to 'Change my password', edit_password_url(@resource, reset_password_token: @token) %></p>
+    6: 
+    7: <p>If you didn't request this, please ignore this email.</p>
+    8: <p>Your password won't change until you access the link above and create a new one.</p>
+  
+app/views/devise/mailer/reset_password_instructions.html.erb:5:in `_app_views_devise_mailer_reset_password_instructions_html_erb__2442554114501099185_70212452458420'
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:20:33 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 72ms (Views: 66.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 23:20:35 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (8.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 86ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-12 23:20:38 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RJDqnEvdxVnUbdlOnDuQuQer1nG6caKY4KfyGDOeotmSh4bbEHjHEesQsQpssR9rfKhHf6nv/z4xbjr6doAizQ==", "user"=>{"email"=>"egoodwin@hmc.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-02-13 07:20:38.212201"], ["last_sign_in_at", "2018-02-13 06:33:02.147560"], ["sign_in_count", 11], ["updated_at", "2018-02-13 07:20:38.213733"], ["id", 3]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 209ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:20:38 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 66ms (Views: 62.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 23:20:39 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (5.2ms)
+  Rendered podcasts/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 124ms (Views: 67.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:20:40 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 80.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/9" for 127.0.0.1 at 2018-02-12 23:20:41 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.5ms)
+  Rendered podcasts/show.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 85ms (Views: 72.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/podcasts/9/edit" for 127.0.0.1 at 2018-02-12 23:20:47 -0800
+Processing by PodcastsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering podcasts/edit.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (5.4ms)
+  Rendered podcasts/edit.html.erb within layouts/application (7.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 86ms (Views: 75.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:21:20 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 70.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/8" for 127.0.0.1 at 2018-02-12 23:21:21 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 8]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (1.9ms)
+  Rendered podcasts/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 84ms (Views: 77.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:21:54 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 70ms (Views: 62.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-12 23:21:55 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TEcKNSMXCmm2EkAyxBCV5Wqwv2WhZTLpsgbrI6EGYdyO7FIlSCNnKu7ECp6F66Fc7DB+brH0fyCjLxR3SsVi+A=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:21:55 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 69ms (Views: 66.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:21:57 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 71ms (Views: 66.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 23:22:46 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 87ms (Views: 85.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-12 23:23:02 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X1btceP5+uxktEMsL+r7xLFlDIt8vbp4q6EoYVF7F2IoLlbzOxTI9+wkSd9WaLNtSDmVPPSUQpQLReQBsn10og==", "user"=>{"email"=>"egoodwin@hmc.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-02-13 07:23:02.372422"], ["last_sign_in_at", "2018-02-13 07:20:38.212201"], ["sign_in_count", 12], ["updated_at", "2018-02-13 07:23:02.373474"], ["id", 3]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 199ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:23:02 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 66ms (Views: 62.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/podcasts/9" for 127.0.0.1 at 2018-02-12 23:23:06 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 9]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (1.8ms)
+  Rendered podcasts/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 70ms (Views: 62.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:23:09 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 70ms (Views: 65.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 23:23:23 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (6.0ms)
+  Rendered podcasts/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 82ms (Views: 72.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 23:23:38 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.5ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 73ms (Views: 64.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/9" for 127.0.0.1 at 2018-02-12 23:23:39 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.6ms)
+  Rendered podcasts/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 77ms (Views: 66.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/podcasts/9/reviews/new" for 127.0.0.1 at 2018-02-12 23:24:02 -0800
+Processing by ReviewsController#new as HTML
+  Parameters: {"podcast_id"=>"9"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (13.9ms)
+  Rendered reviews/new.html.erb within layouts/application (18.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 88.6ms | ActiveRecord: 0.6ms)
+
+
