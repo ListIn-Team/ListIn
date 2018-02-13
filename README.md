@@ -21,9 +21,9 @@ Functionality: N/A
 
 Installation steps: on an internet browser, navigate to this address: URL
 
-Issues: N/A
+Issues: We tried adding a feature that would display the ratings of the podcasts in the representation of five stars. We found the plug-in that the tutorial used that would allow for this functionality (https://wbotelhos.com/raty/). However, we ran into jQuery bugs when we tried to apply the rating system to the website. So unfortunately, this functionality is not used in this version of the website. 
 
-Known Bugs: N/A
+Known Bugs: No known bugs at the moment. 
 
 References:
 - Goodreads website: https://www.goodreads.com
