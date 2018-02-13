@@ -21,7 +21,7 @@ Podcast listeners, podcast creators, individuals new to podcasts
 - Add a review: comment
 
 ## Functionality 
-- Sign up / Log In / Sign Out (![homepage before login](/ReadMe-Screenshots/homepage) 
+- Sign up / Log In / Sign Out (![homepage before login](/ReadMe-Screenshots/homepage.png) 
 	- Navigate to the left side of the header to Sign Up (if it's your first time visiting) or Log In (if it's not). When you are logged in, the option to log out appears. 
 - View Podcast and Reviews
 	- The homepage displays a list of featured podcasts. Click on one to read more about it and its creators. From this page you can also read reviews left by other users. 
