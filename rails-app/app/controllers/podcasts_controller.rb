@@ -40,7 +40,7 @@ class PodcastsController < ApplicationController
   private
 
     def podcast_params
-      params.require(:podcast).permit(:title, :desription, :podcaster)
+      params.require(:podcast).permit(:title, :description, :podcastor)
     end
 
     def find_book

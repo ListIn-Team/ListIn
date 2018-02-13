@@ -3254,6 +3254,2534 @@ Checked in these paths:
   
 app/assets/javascripts/application.js:16
 app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__761250855502830841_70247409937420'
+<<<<<<< HEAD
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:06:12 -0800
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (2.6ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 5613ms (Views: 5566.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:06:25 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (261.7ms)
+Completed 200 OK in 356ms (Views: 339.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-02-12 21:06:33 -0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"emnL6+taBiVZhAsWcwWL9WPVMdZiPHE+ZtLXBAYpv4VfNQn65CsAIStWJ5YunJ+9afmi5TfenJmTpB1rQb6kKA==", "user"=>{"email"=>"egoodwin@hmc.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (5.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "egoodwin@hmc.edu"], ["encrypted_password", "$2a$11$IZkkqNY2QQ49/Hzb4n1jte43qPRtoKjH1iaAnRPNacA6AjSiDNQIm"], ["created_at", "2018-02-13 05:06:34.028401"], ["updated_at", "2018-02-13 05:06:34.028401"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-02-13 05:06:34.043245"], ["last_sign_in_at", "2018-02-13 05:06:34.043245"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-02-13 05:06:34.044830"], ["id", 3]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 266ms (ActiveRecord: 21.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:06:34 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 72ms (Views: 68.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/podcasts/5" for 127.0.0.1 at 2018-02-12 21:06:38 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (2.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [4 times] (1.9ms)
+  Rendered podcasts/show.html.erb within layouts/application (74.9ms)
+Completed 200 OK in 153ms (Views: 130.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 21:06:41 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (7.1ms)
+  Rendered podcasts/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 96ms (Views: 82.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/podcasts" for 127.0.0.1 at 2018-02-12 21:06:57 -0800
+Processing by PodcastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W20InF6njNyTw8wDxnvZbmVRkj6xZwfXdq4g67kUoGyU7RO9NnOAvlNuZ43HNjcym1d9KvkVcUE7x8mDe3rv+w==", "podcast"=>{"title"=>"CodeSwitch", "description"=>"podcast about race issues ", "podcastor"=>"NPR"}, "commit"=>"Create Podcast"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: :description, :podcastor
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "podcasts" ("title", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "CodeSwitch"], ["created_at", "2018-02-13 05:06:57.246369"], ["updated_at", "2018-02-13 05:06:57.246369"], ["user_id", 3]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 14ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:06:57 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:06:58 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 72ms (Views: 63.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/6/reviews/new" for 127.0.0.1 at 2018-02-12 21:06:59 -0800
+Processing by ReviewsController#new as HTML
+  Parameters: {"podcast_id"=>"6"}
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (12.5ms)
+  Rendered reviews/new.html.erb within layouts/application (17.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 73.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/podcasts/6/reviews" for 127.0.0.1 at 2018-02-12 21:07:04 -0800
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4QhGQqmhajxDu1CdgpKcpUtVzpMzuznPqFI0ej7wclwk/ysSnSJizj+iwgOXZmgJqqNmjBWZJKrcuiHHnDundA==", "review"=>{"rating"=>"5", "comment"=>"I really like this podcast"}, "commit"=>"Create Review", "podcast_id"=>"6"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "created_at", "updated_at", "user_id", "podcast_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "I really like this podcast"], ["created_at", "2018-02-13 05:07:04.959517"], ["updated_at", "2018-02-13 05:07:04.959517"], ["user_id", 3], ["podcast_id", 6]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/podcasts/6
+Completed 302 Found in 16ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:07:04 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.0ms)
+  Rendered podcasts/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 82ms (Views: 77.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:10:07 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (27.4ms)
+  Rendered podcasts/show.html.erb within layouts/application (64.6ms)
+Completed 401 Unauthorized in 107ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `ratings' for #<Podcast:0x00007f82cb048b98>):
+     6:   <div class= "col-md-4">
+     7: 
+     8:     <%= render @podcast.reviews %>
+     9:     <%= render @podcast.ratings %>
+    10: 
+    11:     <div>
+    12:         <%= link_to "Add Review", new_podcast_review_path(@podcast) %>
+  
+app/views/podcasts/show.html.erb:9:in `_app_views_podcasts_show_html_erb__1255455763700377292_70099864263580'
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:10:18 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.4ms)
+  Rendered podcasts/show.html.erb within layouts/application (17.9ms)
+Completed 401 Unauthorized in 33ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `rating' for #<Podcast:0x00007f82c9b31660>):
+     6:   <div class= "col-md-4">
+     7: 
+     8:     <%= render @podcast.reviews %>
+     9:     <%= render @podcast.rating %>
+    10: 
+    11:     <div>
+    12:         <%= link_to "Add Review", new_podcast_review_path(@podcast) %>
+  
+app/views/podcasts/show.html.erb:9:in `_app_views_podcasts_show_html_erb__1255455763700377292_70099853213860'
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:10:29 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (8.2ms)
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `rating' for #<Podcast:0x00007f82c8d529e0>):
+     5: <div class = "row">
+     6:   <div class= "col-md-4">
+     7: 
+     8:     <%= render @podcast.reviews, @podcast.rating %>
+     9: 
+    10:     <div>
+    11:         <%= link_to "Add Review", new_podcast_review_path(@podcast) %>
+  
+app/views/podcasts/show.html.erb:8:in `_app_views_podcasts_show_html_erb__1255455763700377292_70099845941980'
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:10:54 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.3ms)
+  Rendered podcasts/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 155ms (Views: 151.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:12:15 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.2ms)
+  Rendered podcasts/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 71ms (Views: 65.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:12:32 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.6ms)
+  Rendered podcasts/show.html.erb within layouts/application (15.2ms)
+Completed 401 Unauthorized in 31ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `rating' for #<Podcast:0x00007f82cb83a2e8>):
+     6:   <div class= "col-md-4">
+     7: 
+     8:     <%= render @podcast.reviews %>
+     9:     <%= @podcast.rating %>
+    10: 
+    11:     <div>
+    12:         <%= link_to "Add Review", new_podcast_review_path(@podcast) %>
+  
+app/views/podcasts/show.html.erb:9:in `_app_views_podcasts_show_html_erb__1255455763700377292_70099868436400'
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:14:44 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (7.5ms)
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `rating' for #<Podcast:0x00007f82ca94cee8>):
+    1: <h2><%= @podcast.title %></h2>
+    2: <h3><%= @podcast.podcastor %></h3>
+    3: <p><%= @podcast.description %></p>
+    4: <p><%= @podcast.rating %></p>
+    5: 
+    6: 
+    7: <div class = "row">
+  
+app/views/podcasts/show.html.erb:4:in `_app_views_podcasts_show_html_erb__1255455763700377292_70099860601420'
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:14:57 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (8.7ms)
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `review' for #<Podcast:0x00007f82c7745580>
+Did you mean?  reviews
+               reviews=):
+    1: <h2><%= @podcast.title %></h2>
+    2: <h3><%= @podcast.podcastor %></h3>
+    3: <p><%= @podcast.description %></p>
+    4: <p><%= @podcast.review %></p>
+    5: 
+    6: 
+    7: <div class = "row">
+  
+app/views/podcasts/show.html.erb:4:in `_app_views_podcasts_show_html_erb__1255455763700377292_70099834380560'
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:17:25 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.2ms)
+  Rendered podcasts/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 195ms (Views: 186.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:17:29 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 67.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:17:31 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.1ms)
+  Rendered podcasts/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 95ms (Views: 88.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:17:44 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.2ms)
+  Rendered podcasts/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 85ms (Views: 79.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:17:46 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 72.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/5" for 127.0.0.1 at 2018-02-12 21:17:48 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 5]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [4 times] (3.2ms)
+  Rendered podcasts/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 98ms (Views: 88.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/podcasts/3" for 127.0.0.1 at 2018-02-12 21:17:53 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 87ms (Views: 78.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:17:55 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 103ms (Views: 94.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/podcasts/2" for 127.0.0.1 at 2018-02-12 21:18:03 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 95ms (Views: 85.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:18:13 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 72.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/4" for 127.0.0.1 at 2018-02-12 21:18:14 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 65ms (Views: 58.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:18:16 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.7ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 71.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:18:58 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.6ms)
+  Rendered podcasts/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 106ms (Views: 97.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:19:46 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (3.0ms)
+  Rendered podcasts/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 3025ms (Views: 3021.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:19:52 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 105ms (Views: 96.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:20:20 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2795ms (Views: 2791.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:21:00 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 4768ms (Views: 4764.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:21:24 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (24.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 4119ms (Views: 4091.2ms | ActiveRecord: 25.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:21:45 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 60.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:22:40 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 59.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:22:47 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 58ms (Views: 54.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:24:10 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 120ms (Views: 112.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:26:06 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 149ms (Views: 145.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:26:07 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 81.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:26:08 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 90.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:26:09 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (3.9ms)
+  Rendered podcasts/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 96ms (Views: 91.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:26:10 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 125ms (Views: 116.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:26:30 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3041ms (Views: 3037.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:27:19 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2696ms (Views: 2692.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:27:35 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3374ms (Views: 3369.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:27:43 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2980ms (Views: 2975.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:28:12 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.5ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3167ms (Views: 3162.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:28:17 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 79.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:28:19 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 128ms (Views: 120.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:28:20 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.7ms)
+  Rendered podcasts/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 105ms (Views: 96.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:28:20 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.6ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 87.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:28:53 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2764ms (Views: 2760.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:29:07 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.3ms)
+Completed 401 Unauthorized in 25ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "  background-color": expected ";", was ": lightgrey"):
+    4:     <title>ListInApp</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css.scss:27
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4540962766286291000_70099864326460'
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:29:35 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.9ms)
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "  background-color": expected ";", was ": LightGrey"):
+    4:     <title>ListInApp</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css.scss:27
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4540962766286291000_70099834203760'
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:29:41 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.8ms)
+Completed 401 Unauthorized in 25ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "  background-color": expected ";", was ": black"):
+    4:     <title>ListInApp</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css.scss:27
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4540962766286291000_70099869682120'
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:30:03 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3380ms (Views: 3376.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:30:19 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3344ms (Views: 3338.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:30:26 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.3ms)
+  Rendered podcasts/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 85ms (Views: 76.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:30:28 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (16.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 162ms (Views: 156.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:30:51 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3863ms (Views: 3858.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:31:03 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3035ms (Views: 3030.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:31:08 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 117ms (Views: 107.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:31:34 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3466ms (Views: 3461.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:31:40 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 80ms (Views: 74.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:31:40 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.9ms)
+  Rendered podcasts/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 92ms (Views: 82.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:31:41 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 123ms (Views: 111.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:31:52 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2925ms (Views: 2920.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:32:01 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2918ms (Views: 2914.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:32:23 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3927ms (Views: 3922.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/5" for 127.0.0.1 at 2018-02-12 21:32:28 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [4 times] (2.1ms)
+  Rendered podcasts/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 120ms (Views: 109.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 21:32:41 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (7.8ms)
+  Rendered podcasts/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 92ms (Views: 75.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 21:32:51 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (7.5ms)
+  Rendered podcasts/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 152ms (Views: 136.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 21:32:53 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (14.4ms)
+  Rendered podcasts/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 133ms (Views: 118.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:33:00 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 76.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:33:16 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 87.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 21:33:17 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (5.7ms)
+  Rendered podcasts/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 79ms (Views: 68.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 21:33:23 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (8.1ms)
+  Rendered podcasts/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 89ms (Views: 79.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 21:33:39 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (7.3ms)
+  Rendered podcasts/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 98ms (Views: 89.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:33:40 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.5ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 77.4ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-12 21:33:43 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1fSRE8WtrFuXj5CGEka+JzMlb20nwXmk99vH5+N0Z+/jUyAKhhDZZDB6QMjkxkRVCI9PAdLURvB5j35XIoPmqg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:33:43 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 74ms (Views: 70.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:33:46 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 126ms (Views: 124.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:33:49 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+1768d+vjFz5ElSWLbQVq0K4V9Br33EmNuPuC+1EuD7CeG5oWQul9AjqgWn2sscGwsyarbmmBcmej0ITJl7ihw==", "user"=>{"email"=>"egoodwin@hmc.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-02-13 05:33:49.290110"], ["sign_in_count", 2], ["updated_at", "2018-02-13 05:33:49.291632"], ["id", 3]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 256ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:33:49 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 216ms (Views: 207.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:33:53 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (3.8ms)
+  Rendered podcasts/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 108ms (Views: 99.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:33:54 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 74.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:34:33 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 76ms (Views: 70.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:35:11 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.7ms)
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:26: syntax error, unexpected keyword_else, expecting keyword_end
+'.freeze;           else 
+                    ^~~~):
+  
+app/views/layouts/application.html.erb:26: syntax error, unexpected keyword_else, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:35:59 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.9ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (7.0ms)
+Completed 401 Unauthorized in 31ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:26: syntax error, unexpected keyword_else, expecting keyword_end
+'.freeze;           else 
+                    ^~~~):
+  
+app/views/layouts/application.html.erb:26: syntax error, unexpected keyword_else, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:36:35 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 170ms (Views: 166.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-12 21:36:37 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"x4R6zAXas92/93sg/RS6t0AwF6/ayNukhj0Nc2WttqGXSrzpZm9g1UcaJEPyPn8ZWDfYWuzsXNYnx/s9nOsgSw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:36:37 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 68ms (Views: 63.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:36:39 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 95ms (Views: 93.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:36:42 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.7ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 111ms (Views: 105.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:36:43 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 140ms (Views: 138.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:36:43 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.5ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 97ms (Views: 91.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:37:08 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.9ms)
+Completed 401 Unauthorized in 51ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+          <% if user_signed_in? );@outpu...
+          ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:24: syntax error, unexpected tFID, expecting ')'
+          <% if user_signed_in? );@output_buffer.safe_append...
+                ^~~~~~~~~~~~~~~
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:48: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:24: syntax error, unexpected tFID, expecting ')'
+app/views/layouts/application.html.erb:48: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:37:12 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.7ms)
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+          <% if user_signed_in? );@outpu...
+          ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:24: syntax error, unexpected tFID, expecting ')'
+          <% if user_signed_in? );@output_buffer.safe_append...
+                ^~~~~~~~~~~~~~~
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:48: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:24: syntax error, unexpected tFID, expecting ')'
+app/views/layouts/application.html.erb:48: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:37:23 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.0ms)
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:23: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+...append=( link_to "Log In",  -->
+...                               ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:24: syntax error, unexpected tFID, expecting ')'
+          <% if user_signed_in? );@output_buffer.safe_append...
+                ^~~~~~~~~~~~~~~
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:48: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.erb:23: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+app/views/layouts/application.html.erb:24: syntax error, unexpected tFID, expecting ')'
+app/views/layouts/application.html.erb:48: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:37:33 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.0ms)
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:23: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+...append=( link_to "Log In",  -->
+...                               ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:24: syntax error, unexpected tFID, expecting ')'
+          <% if user_signed_in? );@output_buffer.safe_append...
+                ^~~~~~~~~~~~~~~
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:48: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.erb:23: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+app/views/layouts/application.html.erb:24: syntax error, unexpected tFID, expecting ')'
+app/views/layouts/application.html.erb:48: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:37:56 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:37:58 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 84ms (Views: 82.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:38:00 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 105ms (Views: 103.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:38:46 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.6ms)
+Completed 401 Unauthorized in 45ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:25: unknown regexp option - l
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:25: unmatched close parenthesis: /log_in
+          <% if user_signed_in? );@output_buffer.safe_append='
+            <li>'.freeze;@output_buffer.append=( link_to "Sign Out", destroy_user_session_path, method: :delete );@output_buffer.safe_append='</i
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:31: unknown regexp option - l
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:35: unknown regexp options - dv
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:37: syntax error, unexpected '<'
+    </nav>
+    ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:39: unknown regexp option - p
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+    <p class="alert">'.freeze;@out...
+    ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:44: unknown regexp options - bdy
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:45: syntax error, unexpected '<'
+</html>
+^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:50: unterminated regexp meets end of file
+          end
+             ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:50: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:25: unknown regexp option - l
+app/views/layouts/application.html.erb:25: unmatched close parenthesis: /log_in
+app/views/layouts/application.html.erb:31: unknown regexp option - l
+app/views/layouts/application.html.erb:35: unknown regexp options - dv
+app/views/layouts/application.html.erb:37: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:39: unknown regexp option - p
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: unknown regexp options - bdy
+app/views/layouts/application.html.erb:45: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:50: unterminated regexp meets end of file
+app/views/layouts/application.html.erb:50: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:38:56 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.9ms)
+Completed 401 Unauthorized in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:23: unknown regexp option - l
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:23: unmatched close parenthesis: /sign_in );@output_buffer.safe_append=' </i
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:27: unknown regexp option - l
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:29: syntax error, unexpected '<'
+        <ul class = "nav navbar-nav na...
+        ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:33: unknown regexp option - l
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:35: syntax error, unexpected '<'
+      </div>
+      ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:37: unknown regexp options - av
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:39: syntax error, unexpected '<'
+    <p class="notice">'.freeze;@ou...
+    ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:40: unknown regexp option - p
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:44: syntax error, unexpected '<', expecting ')'
+  </body>
+  ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:45: unknown regexp options - htl
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:50: unterminated string meets end of file
+          end
+             ^
+/Users/ericagoodwin/Desktop/ListIn/rails-app/app/views/layouts/application.html.erb:50: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:23: unknown regexp option - l
+app/views/layouts/application.html.erb:23: unmatched close parenthesis: /sign_in );@output_buffer.safe_append=' </i
+app/views/layouts/application.html.erb:27: unknown regexp option - l
+app/views/layouts/application.html.erb:29: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:33: unknown regexp option - l
+app/views/layouts/application.html.erb:35: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:37: unknown regexp options - av
+app/views/layouts/application.html.erb:39: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:40: unknown regexp option - p
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - htl
+app/views/layouts/application.html.erb:50: unterminated string meets end of file
+app/views/layouts/application.html.erb:50: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:41:43 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 189ms (Views: 186.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:41:45 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 107ms (Views: 99.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:41:46 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  Rendered collection of reviews/_review.html.erb [1 times] (1.5ms)
+  Rendered podcasts/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 113ms (Views: 104.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/podcasts/6/reviews/new" for 127.0.0.1 at 2018-02-12 21:41:50 -0800
+Processing by ReviewsController#new as HTML
+  Parameters: {"podcast_id"=>"6"}
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (6.7ms)
+  Rendered reviews/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 104ms (Views: 93.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:41:52 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 92ms (Views: 87.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:41:53 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 110ms (Views: 108.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:41:54 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 110ms (Views: 103.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:42:03 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 105ms (Views: 104.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:42:06 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 99ms (Views: 97.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:42:08 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8D0ek2OU6uAFlEEavgbYVFLgGg6UG/7M38loTaSmbGJ6ZvZOkLlD6sY0dGQydtweo/glidqKWwUtmjnxM4GKzA==", "user"=>{"email"=>"egoodwin@hmc.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-02-13 05:42:08.270992"], ["last_sign_in_at", "2018-02-13 05:33:49.290110"], ["sign_in_count", 3], ["updated_at", "2018-02-13 05:42:08.271944"], ["id", 3]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 182ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:42:08 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 90.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-12 21:42:09 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8P7TQhttihZWQHOp0GkBc6IAkgytbo0pP4At3Dgt/kGndL2tp7VFwvxDJY3DHvX9Z6aMF605p2Lres9zbDiGyQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:42:09 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 67ms (Views: 62.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:43:05 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 181ms (Views: 178.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:43:07 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  Rendered collection of reviews/_review.html.erb [1 times] (1.4ms)
+  Rendered podcasts/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 97ms (Views: 88.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-12 21:43:08 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Lum9+REsNxFa34PZTiCwDlqPm853tq6bhimVhEB23MydReTytv5d6/yLTtmjlRwX/uut5470ui+4wkf4VselyA=="}
+Redirected to http://0.0.0.0:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:43:08 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 81ms (Views: 75.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:43:09 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 79ms (Views: 74.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-12 21:43:09 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Uy9Dp/mnViAXLtMAB2M9lKhNJePSaFJltBkECdLQT+XggxqsXnU82rF6HgDq1pGNDCkTyisqRtGK8tZ1xGE24Q=="}
+Redirected to http://0.0.0.0:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:43:09 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 79ms (Views: 75.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:43:31 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 90ms (Views: 86.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:43:33 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 98ms (Views: 96.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:43:34 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 106ms (Views: 101.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:43:36 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 122ms (Views: 120.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:43:44 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 143ms (Views: 142.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:43:46 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 123ms (Views: 112.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:43:47 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 112ms (Views: 109.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:43:56 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.5ms)
+Completed 401 Unauthorized in 990ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sign_in' for #<#<Class:0x00007f82cc410220>:0x00007f82cad10c28>
+Did you mean?  signed_in?):
+    24:             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+    25:           <% end %>
+    26:           <% if !user_signed_in? %>
+    27:           <li><%= link_to "Log In", new_user_registration_path/sign_in %></li>
+    28:           <% end %>
+    29: 
+    30: 
+  
+app/views/layouts/application.html.erb:27:in `_app_views_layouts_application_html_erb__4540962766286291000_70099855007000'
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:47:20 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 158ms (Views: 156.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:47:22 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.5ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 221ms (Views: 215.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:47:24 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 119ms (Views: 117.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-12 21:47:27 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 122ms (Views: 119.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:47:29 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 143ms (Views: 141.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-12 21:47:30 -0800
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 102ms (Views: 96.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:47:32 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 120ms (Views: 112.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:47:34 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 132ms (Views: 130.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:47:35 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oYDdF1eIcUttxdWatcY6HCBRyLHQZupznU+eqyVbzDxJf0tnjz8IbE4Pcs/qT1ImZlLvMMp5NMSbBYKY6nsHdw==", "user"=>{"email"=>"egoodwin@hmc.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-02-13 05:47:35.962145"], ["last_sign_in_at", "2018-02-13 05:42:08.270992"], ["sign_in_count", 4], ["updated_at", "2018-02-13 05:47:35.963244"], ["id", 3]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 190ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:47:35 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 119ms (Views: 113.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-12 21:47:37 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rGMftce8IEodbJrPVjWKyssBVTxKCq8DP3ETBaga23Pk7Rnn31S3a1uTHuuAp3s5w0z/5+0krY6Q+0s2kt0L7A=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:47:37 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 74ms (Views: 69.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:47:50 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 207ms (Views: 202.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:47:52 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 139ms (Views: 136.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:47:53 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"owFl2nvM75cpLi9aVt2ArGv2Sn854Ondx/A4vhDZe2wIZtFHTT5YMCmjszqbNXpKZZqCz+87gNS6OXEsQm4h6A==", "user"=>{"email"=>"egoodwin@hmc.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-02-13 05:47:53.525676"], ["last_sign_in_at", "2018-02-13 05:47:35.962145"], ["sign_in_count", 5], ["updated_at", "2018-02-13 05:47:53.526817"], ["id", 3]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 195ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:47:53 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 178ms (Views: 174.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-12 21:47:54 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vbD8ddcjdpWxcC54Q4yaK8PsJ8/PrwYy0rQBNRMf8MtJ/OP9JhAIwiigiFUFGyGErBkcABy3oEOF/Ofrg2QOdg=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:47:54 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 82ms (Views: 77.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:48:38 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 128ms (Views: 121.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:48:42 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  Rendered collection of reviews/_review.html.erb [1 times] (1.3ms)
+  Rendered podcasts/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 93ms (Views: 87.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:48:43 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.6ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 87ms (Views: 83.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/5" for 127.0.0.1 at 2018-02-12 21:48:45 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 5]]
+  Rendered collection of reviews/_review.html.erb [4 times] (1.2ms)
+  Rendered podcasts/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 74ms (Views: 66.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:48:46 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 89ms (Views: 85.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/podcasts/2" for 127.0.0.1 at 2018-02-12 21:48:46 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered podcasts/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 75ms (Views: 66.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:48:48 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 90ms (Views: 83.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/podcasts/5" for 127.0.0.1 at 2018-02-12 21:50:06 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPodcast Load (2.9ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 5]]
+  Rendered collection of reviews/_review.html.erb [4 times] (6.5ms)
+  Rendered podcasts/show.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 240ms (Views: 211.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:52:02 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 173ms (Views: 168.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:52:04 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  Rendered collection of reviews/_review.html.erb [1 times] (1.1ms)
+  Rendered podcasts/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 134ms (Views: 125.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/2" for 127.0.0.1 at 2018-02-12 21:52:06 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 2]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered podcasts/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 280ms (Views: 269.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/3" for 127.0.0.1 at 2018-02-12 21:52:13 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPodcast Load (0.5ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered podcasts/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 118ms (Views: 108.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:52:14 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 109ms (Views: 104.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:52:16 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GKAzmcfKnMn+WW2BwaK2CD/WjZTtfe09UWCq20x+3Sx4v5q1CBvs/wK6M1VnqAj7SzvrHxQ3YvH+Vo6MZdJULw==", "user"=>{"email"=>"egoodwin@hmc.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-02-13 05:52:16.472149"], ["last_sign_in_at", "2018-02-13 05:47:53.525676"], ["sign_in_count", 6], ["updated_at", "2018-02-13 05:52:16.474384"], ["id", 3]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 211ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:52:16 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 157ms (Views: 145.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/2" for 127.0.0.1 at 2018-02-12 21:52:17 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 154ms (Views: 147.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/podcasts/2" for 127.0.0.1 at 2018-02-12 21:52:35 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered podcasts/show.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 161ms (Views: 156.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/podcasts/2" for 127.0.0.1 at 2018-02-12 21:52:38 -0800
+Processing by PodcastsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DoABNrAYR38PvGNfLzDB+AufVyPjEt2wqghtNatHDx29kjizvUaGsRaN4nwYHSiSjovxhkACttPzLhVski3t0w==", "id"=>"2"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[31mDELETE FROM "podcasts" WHERE "podcasts"."id" = ?[0m  [["id", 2]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 14ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:52:38 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 103ms (Views: 99.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/3" for 127.0.0.1 at 2018-02-12 21:52:39 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered podcasts/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 94.2ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/podcasts/3" for 127.0.0.1 at 2018-02-12 21:52:41 -0800
+Processing by PodcastsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"orMqvw/iMsdkfqHI7P8rK0T8HEQ0JQpQaYKc4UQfcgMRoRM6ArzzCX1PIOvb0sJBwei64Zc1YTMwpOS4fXWQzQ==", "id"=>"3"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "podcasts" WHERE "podcasts"."id" = ?[0m  [["id", 3]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 10ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:52:41 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 192ms (Views: 183.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/4" for 127.0.0.1 at 2018-02-12 21:52:42 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered podcasts/show.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 85.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/podcasts/4" for 127.0.0.1 at 2018-02-12 21:52:44 -0800
+Processing by PodcastsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"N5Sd57t/n5DrS7PquAxqkfyML4v7KACbHQGCROC6PN+EhqRitiFeXvJ6MsmPIYP7eZiJLlg4a/hEJ/od2dDeEQ==", "id"=>"4"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "podcasts" WHERE "podcasts"."id" = ?[0m  [["id", 4]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 12ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:52:44 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.5ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 161ms (Views: 150.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/podcasts/5" for 127.0.0.1 at 2018-02-12 21:52:45 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [4 times] (2.6ms)
+  Rendered podcasts/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 91ms (Views: 83.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/podcasts/5" for 127.0.0.1 at 2018-02-12 21:52:47 -0800
+Processing by PodcastsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wIHkqFugxu601OIvVShhootUDwH9S1GozozIcoJONKBzk90tVv4HIK3lYwxiBYjIDkCppF5bOsuXqrAruyTWbg==", "id"=>"5"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "podcasts" WHERE "podcasts"."id" = ?[0m  [["id", 5]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 6ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:52:47 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 82.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:52:48 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of reviews/_review.html.erb [1 times] (2.9ms)
+  Rendered podcasts/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 86ms (Views: 79.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/podcasts/6" for 127.0.0.1 at 2018-02-12 21:52:50 -0800
+Processing by PodcastsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZHttn6yok7VmDv8AqkmHPMtLrdJIdA196Xn++Jc4caLXaVQaofZSe38/fiOdZG5WTl8Ld+tkZh6wX4ahrlKTbA==", "id"=>"6"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "podcasts" WHERE "podcasts"."id" = ?[0m  [["id", 6]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 11ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:52:50 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 136ms (Views: 131.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:53:04 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 141ms (Views: 137.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:53:06 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 90.0ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-12 21:53:06 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n3b40+2XonMZdD0PWC9P2ylfDs+2gznvBq5YBi3g2gYsZMFW4MljvQBFvCxvAqaxrEuoahWTUoxfiCBfFIo4yA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:53:06 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 102ms (Views: 96.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:53:09 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 149ms (Views: 147.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-12 21:53:10 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tT7NyeB42KJEV6BYP4aTDYlkpN3tQTF/1EHhRW1vlgnF29Yk3wMki1SdEBAugoklqpuvk2WdlEo1fSkNDb8IcQ==", "user"=>{"email"=>"egoodwin@hmc.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "egoodwin@hmc.edu"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-02-13 05:53:10.912408"], ["last_sign_in_at", "2018-02-13 05:52:16.472149"], ["sign_in_count", 7], ["updated_at", "2018-02-13 05:53:10.915310"], ["id", 3]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 203ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:53:10 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 129ms (Views: 125.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 21:53:11 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (6.0ms)
+  Rendered podcasts/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 96ms (Views: 84.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/podcasts" for 127.0.0.1 at 2018-02-12 21:56:13 -0800
+Processing by PodcastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2vTscMAOq/2KyBXxstfCAJZtIPpnzQ7+k4JSyP92iNQoqB34R3SW80QixyWAVZST7JUxw9wojGmqBIRX6PM1vA==", "podcast"=>{"title"=>"CodeSwitch", "description"=>"CodeSwitch covers current events relating to race and culture, with new episodes weekly hosted by NPR. ", "podcastor"=>"Shereen Marisol Meraji, Gene Demby, Kat Chow, Adrian Florido, Karen Grigsby Bates, Leah Donnella"}, "commit"=>"Create Podcast"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: :description, :podcastor
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "podcasts" ("title", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "CodeSwitch"], ["created_at", "2018-02-13 05:56:14.023579"], ["updated_at", "2018-02-13 05:56:14.023579"], ["user_id", 3]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 65ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:56:14 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 259ms (Views: 254.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:56:15 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 103ms (Views: 89.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:56:20 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 90.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:56:21 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 119ms (Views: 112.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:56:23 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 110ms (Views: 104.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:56:31 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 94ms (Views: 87.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:56:41 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 98ms (Views: 93.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:56:50 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 102ms (Views: 96.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:56:54 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 124ms (Views: 120.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:56:55 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 81ms (Views: 73.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:57:02 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 82ms (Views: 77.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:57:14 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 90ms (Views: 84.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:57:25 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (3.5ms)
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    1: <h2><%= @podcast.title @podcast.description %></h2>
+    2: <p><%= @podcast.description %></p>
+    3: 
+    4: 
+  
+app/views/podcasts/show.html.erb:1:in `_app_views_podcasts_show_html_erb__1255455763700377292_70099855585440'
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:58:08 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (5.0ms)
+Completed 401 Unauthorized in 66ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    1: <h2><%= @podcast.title @podcast.description %></h2>
+    2: <p><%= @podcast.description %></p>
+    3: 
+    4: 
+  
+app/views/podcasts/show.html.erb:1:in `_app_views_podcasts_show_html_erb__1255455763700377292_70099868403660'
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:58:20 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (3.3ms)
+Completed 401 Unauthorized in 28ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    1: <h2><%= @podcast.title @podcast.description %></h2>
+    2: <p><%= @podcast.description %></p>
+    3: 
+    4: 
+  
+app/views/podcasts/show.html.erb:1:in `_app_views_podcasts_show_html_erb__1255455763700377292_70099847106320'
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:58:41 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 253ms (Views: 241.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 21:58:43 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 123ms (Views: 117.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:58:44 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 107ms (Views: 100.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:58:55 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (15.4ms)
+Completed 401 Unauthorized in 29ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `desription' for #<Podcast:0x00007f82cd19c178>
+Did you mean?  description
+               description=
+               description?):
+    1: <h2><%= @podcast.title %></h2>
+    2: <p><%= @podcast.desription %></p>
+    3: 
+    4: 
+    5: <div class = "row">
+  
+app/views/podcasts/show.html.erb:2:in `_app_views_podcasts_show_html_erb__1255455763700377292_70099871258360'
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 21:59:01 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 134ms (Views: 129.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/new" for 127.0.0.1 at 2018-02-12 21:59:03 -0800
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (8.7ms)
+  Rendered podcasts/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 105ms (Views: 90.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/podcasts" for 127.0.0.1 at 2018-02-12 22:00:20 -0800
+Processing by PodcastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wDIlw6C0C8zYUdJ1bFlqBkSYoP87SPwuUGgynsNhHWoybtRLJ842wha7AKFe2zyVPmCxxoCtfrlp7uQB1OSgAg==", "podcast"=>{"title"=>"The New Yorker Radio Hour", "description"=>"Weekly podcast featuring interviews with the week's The New Yorker journalists, cartoonists, artists, authors, and other cultural figures. ", "podcastor"=>"David Remnick"}, "commit"=>"Create Podcast"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "podcasts" ("title", "description", "podcastor", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The New Yorker Radio Hour"], ["description", "Weekly podcast featuring interviews with the week's The New Yorker journalists, cartoonists, artists, authors, and other cultural figures. "], ["podcastor", "David Remnick"], ["created_at", "2018-02-13 06:00:20.975825"], ["updated_at", "2018-02-13 06:00:20.975825"], ["user_id", 3]]
+  [1m[35m (16.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 28ms (ActiveRecord: 18.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 22:00:21 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 138ms (Views: 131.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/podcasts/8" for 127.0.0.1 at 2018-02-12 22:00:22 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 8]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 110ms (Views: 99.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/podcasts/8" for 127.0.0.1 at 2018-02-12 22:00:47 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 8]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 150ms (Views: 144.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/podcasts/8" for 127.0.0.1 at 2018-02-12 22:01:01 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 8]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 4081ms (Views: 4076.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 22:01:09 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 110ms (Views: 98.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/podcasts/7" for 127.0.0.1 at 2018-02-12 22:01:10 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 98ms (Views: 90.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 22:01:11 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 82.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/podcasts/8" for 127.0.0.1 at 2018-02-12 22:01:12 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 8]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 84ms (Views: 78.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 22:01:13 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 105ms (Views: 96.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 22:01:32 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 137.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/podcasts/8" for 127.0.0.1 at 2018-02-12 22:01:33 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPodcast Load (0.3ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 8]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 151ms (Views: 143.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 22:01:41 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.4ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 143ms (Views: 137.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 22:01:55 -0800
+Processing by PodcastsController#index as HTML
+  Rendering podcasts/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" ORDER BY created_at DESC[0m
+  Rendered podcasts/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 167ms (Views: 162.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/podcasts/8" for 127.0.0.1 at 2018-02-12 22:01:56 -0800
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPodcast Load (0.2ms)[0m  [1m[34mSELECT  "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering podcasts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."podcast_id" = ?[0m  [["podcast_id", 8]]
+  Rendered collection of templates [0 times] (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered podcasts/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 101ms (Views: 94.7ms | ActiveRecord: 0.7ms)
+=======
 Started GET "/podcasts/5" for 127.0.0.1 at 2018-02-10 17:50:08 -0800
 Processing by PodcastsController#show as HTML
   Parameters: {"id"=>"5"}
@@ -3263,5 +5791,6 @@ Processing by PodcastsController#show as HTML
   Rendered collection of reviews/_review.html.erb [4 times] (1.2ms)
   Rendered podcasts/show.html.erb within layouts/application (4.9ms)
 Completed 200 OK in 55ms (Views: 51.6ms | ActiveRecord: 0.4ms)
+>>>>>>> upstream/master
 
 
